@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" 
+      th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Services|Connexa</title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition duration-300">
+
+<div id="content" class="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
+
+    <!-- HERO -->
+    <section class="text-center mb-16">
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold 
+                   text-gray-900 dark:text-white mb-4">
+            Our Services
+        </h1>
+
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Explore the powerful features and services offered by Smart Contact Manager 
+            to simplify your contact management experience.
+        </p>
+
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="mb-16">
+
+        <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Service 1 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
+                    Contact Management
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Easily add, update, and delete contacts with a clean and intuitive interface. 
+                    Keep all your important connections organized in one place.
+                </p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-3">
+                    Smart Search
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Find contacts instantly using powerful search and filtering options. 
+                    No more scrolling through long lists.
+                </p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-3">
+                    Secure Storage
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Your data is protected with authentication and secure storage mechanisms, 
+                    ensuring privacy and safety.
+                </p>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-red-600 dark:text-red-400 mb-3">
+                    Contact Backup
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Backup your contacts to avoid data loss and restore them whenever needed.
+                </p>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-yellow-600 dark:text-yellow-400 mb-3">
+                    Responsive Design
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Access your contacts from any device — mobile, tablet, or desktop — 
+                    with a seamless experience.
+                </p>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                        hover:shadow-xl hover:-translate-y-2 transition duration-300 
+                        border border-gray-200 dark:border-gray-700">
+
+                <h3 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400 mb-3">
+                    User Friendly UI
+                </h3>
+
+                <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Designed with simplicity in mind, the interface ensures ease of use 
+                    for all users without complexity.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center mb-16">
+
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 
+                    text-white py-10 px-6 rounded-xl shadow-lg">
+
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4">
+                Ready to experience these services?
+            </h2>
+
+            <p class="text-sm sm:text-base mb-6">
+                Start managing your contacts efficiently today.
+            </p>
+
+            <a th:href="@{/register}"
+               class="bg-white text-blue-600 px-6 py-2 rounded-lg font-medium 
+                      hover:bg-gray-100 transition duration-300">
+                Get Started
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-gray-500 dark:text-gray-400 text-sm 
+                   border-t border-gray-200 dark:border-gray-700 pt-6">
+
+        <p>© 2026 Connexa | Built by Safdar Azam</p>
+
+    </footer>
+
+</div>
+
+<script>
+    console.log("Services Page Loaded ");
+</script>
+
+</body>
+</html>

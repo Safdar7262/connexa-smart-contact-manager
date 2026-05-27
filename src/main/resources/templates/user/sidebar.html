@@ -1,0 +1,118 @@
+<div th:fragment="sidebar">
+
+    <aside class="fixed top-16 left-0 z-40 w-64 h-screen
+    bg-white border-r border-gray-200
+    dark:bg-gray-900 dark:border-gray-700
+
+    transform -translate-x-full transition-transform duration-300
+    sm:translate-x-0">
+
+        <div class="h-full px-4 py-6 overflow-y-auto">
+
+            <h2 class="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4">
+                Welcome to Connexa
+            </h2>
+
+            <ul class="space-y-2 font-medium">
+
+                <!-- Dashboard -->
+                <li>
+                    <a th:href="@{/user/dashboard}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-chart-line w-5"></i>
+                        <span class="ml-3">Dashboard</span>
+
+                    </a>
+                </li>
+
+
+                <!-- Profile -->
+                <li>
+                    <a th:href="@{/user/profile}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-user w-5"></i>
+                        <span class="ml-3">Profile</span>
+
+                        <span class="ml-auto text-xs bg-green-500 text-white px-2 py-0.5 rounded">
+                            Manage
+                        </span>
+
+                    </a>
+                </li>
+
+
+                <!-- Add Contact -->
+                <li>
+                    <a th:href="@{/user/contacts/add}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-address-book w-5"></i>
+                        <span class="ml-3">Add Contact</span>
+
+                        <span class="ml-auto text-xs bg-blue-600 text-white px-2 py-0.5 rounded-full">
+                            3
+                        </span>
+
+                    </a>
+                </li>
+
+
+                <!-- Users -->
+                <li>
+                    <a th:href="@{/user/contacts}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-users w-5"></i>
+                        <span class="ml-3">Contacts</span>
+
+                    </a>
+                </li>
+
+
+                <!-- Products -->
+                <li>
+                    <a th:href="@{/user/groups}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-box w-5"></i>
+                        <span class="ml-3">Groups</span>
+
+                    </a>
+                </li>
+
+
+                <hr class="my-4 border-gray-200 dark:border-gray-700">
+
+
+                <!-- Sign In -->
+                <li>
+                    <a th:href="@{/login}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-right-to-bracket w-5"></i>
+                        <span class="ml-3">Sign In</span>
+
+                    </a>
+                </li>
+
+
+                <!-- Sign Up -->
+                <li>
+                    <a th:href="@{/register}" class="flex items-center p-2 text-gray-900 rounded-lg
+dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+
+                        <i class="fa-solid fa-user-plus w-5"></i>
+                        <span class="ml-3">Sign Up</span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </aside>
+
+</div>

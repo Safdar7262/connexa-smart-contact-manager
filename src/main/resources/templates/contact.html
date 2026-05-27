@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" 
+      th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Contact Us|Connexa</title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition duration-300">
+
+<div id="content" class="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
+
+    <!-- HERO -->
+    <section class="text-center mb-16">
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold 
+                   text-gray-900 dark:text-white mb-4">
+            Contact Us
+        </h1>
+
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Have questions or need help? Reach out to us and we’ll get back to you as soon as possible.
+        </p>
+
+    </section>
+
+    <!-- MAIN SECTION -->
+    <section class="grid md:grid-cols-2 gap-10 mb-16">
+
+        <!-- LEFT INFO -->
+        <div class="space-y-6">
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow border 
+                        border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                    📧 Email
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    support@connexa.com
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow border 
+                        border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-green-600 dark:text-green-400 mb-2">
+                    📱 Phone
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    +91 6207274850
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow border 
+                        border-gray-200 dark:border-gray-700">
+                <h3 class="text-lg font-semibold text-purple-600 dark:text-purple-400 mb-2">
+                    📍 Address
+                </h3>
+                <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Bangalore, India
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT FORM -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border 
+                    border-gray-200 dark:border-gray-700">
+
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">
+                Send Message
+            </h3>
+
+            <form action="#" method="post" class="space-y-4">
+
+                <!-- Name -->
+                <input type="text" name="name" placeholder="Your Name"
+                       class="w-full px-4 py-2 rounded-lg border 
+                              border-gray-300 dark:border-gray-600 
+                              bg-gray-50 dark:bg-gray-900 
+                              text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <!-- Email -->
+                <input type="email" name="email" placeholder="Your Email"
+                       class="w-full px-4 py-2 rounded-lg border 
+                              border-gray-300 dark:border-gray-600 
+                              bg-gray-50 dark:bg-gray-900 
+                              text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <!-- Message -->
+                <textarea name="message" rows="4" placeholder="Your Message"
+                          class="w-full px-4 py-2 rounded-lg border 
+                                 border-gray-300 dark:border-gray-600 
+                                 bg-gray-50 dark:bg-gray-900 
+                                 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+                <!-- Button -->
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 rounded-lg 
+                               hover:bg-blue-700 transition duration-300">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-gray-500 dark:text-gray-400 text-sm 
+                   border-t border-gray-200 dark:border-gray-700 pt-6">
+
+        <p>© 2026 Connexa | Built by Safdar Azam</p>
+
+    </footer>
+
+</div>
+
+<script>
+    console.log("Contact Us Page Loaded ");
+</script>
+
+</body>
+</html>

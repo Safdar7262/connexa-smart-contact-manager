@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en"
+      th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <title>Contact Details</title>
+</head>
+
+<body>
+
+<div id="content">
+
+<!--  SAME BACKGROUND AS EDIT PAGE -->
+<div class="pt-6 sm:pt-8 min-h-screen bg-gray-50 dark:bg-gray-900">
+
+    <!-- Heading -->
+    <h1 class="text-2xl sm:text-3xl md:text-4xl text-center font-bold 
+               text-gray-800 dark:text-white">
+        Contact Profile
+    </h1>
+
+    <!-- Container -->
+    <div class="flex justify-center mt-6 sm:mt-10 px-3 sm:px-4">
+
+        <!-- CARD -->
+        <div class="w-full max-w-3xl sm:max-w-2xl 
+                    bg-white border border-gray-200
+                    dark:bg-gray-800 dark:border-gray-700
+                    rounded-xl shadow-md p-4 sm:p-6">
+
+            <!-- PROFILE -->
+            <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 
+                        border-b border-gray-200 dark:border-gray-700 pb-6 text-center sm:text-left">
+
+                <img th:src="${contact.picture}"
+                     onerror="this.src='https://via.placeholder.com/100'"
+                     class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover
+                            border border-gray-300 dark:border-gray-600">
+
+                <div>
+                    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold 
+                               text-gray-800 dark:text-white"
+                        th:text="${contact.name}"></h2>
+
+                    <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base"
+                       th:text="${contact.email}"></p>
+
+                    <span th:if="${contact.favorite}"
+                          class="text-green-600 dark:text-green-400 text-sm font-semibold">
+                        ★ Favorite
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- DETAILS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-6 
+                        text-gray-700 dark:text-gray-300">
+
+                <div>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Phone</p>
+                    <p class="text-sm sm:text-base" th:text="${contact.phoneNumber}"></p>
+                </div>
+
+                <div th:if="${contact.webSiteLink}">
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Website</p>
+                    <a th:href="${contact.webSiteLink}" target="_blank"
+                       class="text-blue-600 dark:text-blue-400 text-sm sm:text-base">
+                        Visit
+                    </a>
+                </div>
+
+                <div th:if="${contact.linkedInLink}">
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">LinkedIn</p>
+                    <a th:href="${contact.linkedInLink}" target="_blank"
+                       class="text-blue-600 dark:text-blue-400 text-sm sm:text-base">
+                        Profile
+                    </a>
+                </div>
+
+                <div>
+                    <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Address</p>
+                    <p class="text-sm sm:text-base" th:text="${contact.address}"></p>
+                </div>
+
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="mt-6 border-t border-gray-200 dark:border-gray-700 pt-4">
+                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Description</p>
+                <p class="text-gray-700 dark:text-gray-300 mt-1 text-sm sm:text-base"
+                   th:text="${contact.description}"></p>
+            </div>
+
+            <!-- BUTTONS -->
+            <div class="flex flex-col sm:flex-row gap-3 sm:gap-0 sm:justify-between mt-8">
+
+                <a th:href="@{/user/contacts}"
+                   class="w-full sm:w-auto text-center px-4 py-2 rounded-lg
+                          bg-gray-200 hover:bg-gray-300
+                          text-gray-800 font-medium
+                          dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
+                    Back
+                </a>
+
+                <a th:href="@{'/user/contacts/edit/' + ${contact.id}}"
+                   class="w-full sm:w-auto text-center px-4 py-2 rounded-lg
+                          bg-blue-600 hover:bg-blue-700
+                          text-white font-medium">
+                    Edit Contact
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<th:block id="script">
+<script>
+    console.log("Theme Fixed");
+</script>
+</th:block>
+
+</body>
+</html>

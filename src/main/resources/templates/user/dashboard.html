@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::content},~{::title},~{::script})}">
+
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <!-- IMPORTANT -->
+    <div th:fragment="content">
+
+        <div class="pt-6 sm:pt-8 min-h-screen bg-gray-50 dark:bg-gray-900">
+
+            <!-- TITLE -->
+            <h1 class="text-3xl text-center font-bold text-gray-800 dark:text-white">
+                Dashboard
+            </h1>
+
+            <!-- WELCOME -->
+            <p class="text-center text-gray-500 mt-2">
+                Welcome,
+                <span th:text="${loggedInUser != null ? loggedInUser.name : 'Guest'}"></span>
+            </p>
+
+            <!-- STATS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4">
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
+                    <p>Total Contacts</p>
+                    <h2 class="text-2xl font-bold" th:text="${totalContacts}">0</h2>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
+                    <p>Favorite Contacts</p>
+                    <h2 class="text-2xl font-bold" th:text="${favoriteContacts}">0</h2>
+                </div>
+
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
+                    <p>Account Type</p>
+                    <h2 class="text-blue-500">Standard User</h2>
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10 px-4">
+
+                <a th:href="@{/user/contacts/add}" class="p-5 bg-blue-600 text-white text-center rounded-xl">
+                    Add Contact
+                </a>
+
+                <a th:href="@{/user/contacts}" class="p-5 bg-green-600 text-white text-center rounded-xl">
+                    View Contacts
+                </a>
+
+                <a th:href="@{/user/profile}" class="p-5 bg-purple-600 text-white text-center rounded-xl">
+                    Profile
+                </a>
+
+            </div>
+
+            <!-- RECENT -->
+            <div class="mt-10 bg-white dark:bg-gray-800 p-6 rounded-xl shadow mx-4">
+
+                <h2 class="text-xl font-semibold mb-4">Recent Activity</h2>
+
+                <!-- Empty State -->
+                <div th:if="${recentContacts == null or #lists.isEmpty(recentContacts)}"
+                    class="text-gray-400 text-center">
+                    No recent activity yet 🚀
+                </div>
+
+                <!-- Activity List -->
+                <ul th:if="${recentContacts != null and !#lists.isEmpty(recentContacts)}">
+
+                    <li th:each="c : ${recentContacts}"
+                        class="mb-3 flex justify-between items-center border-b border-gray-700 pb-2">
+
+                        <!-- Left Side -->
+                        <div>
+                            <span class="text-gray-300">Added contact:</span>
+                            <span class="font-semibold text-blue-400" th:text="${c.name}"></span>
+                        </div>
+
+                        <!-- Date + Time -->
+                        <div class="text-sm text-gray-400"
+                            th:text="${#temporals.format(c.createdAt, 'dd MMM yyyy, HH:mm')}">
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ✅ SCRIPT FIX -->
+    <th:block th:fragment="script">
+        <script>
+            console.log("Dashboard Loaded");
+        </script>
+    </th:block>
+
+</body>
+
+</html>

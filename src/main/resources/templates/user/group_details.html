@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <title>Group Details|Connexa</title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition duration-300">
+
+    <div id="content" class="px-4 sm:px-6 lg:px-8 py-10 max-w-6xl mx-auto">
+
+        <!-- HEADER -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+                👥 <span th:text="${group.name}"></span>
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 mt-2">
+                Manage contacts inside this group
+            </p>
+        </div>
+
+        <!-- ADD CONTACT CARD -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md mb-10 
+                border border-gray-200 dark:border-gray-700">
+
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                Add Contacts to Group
+            </h2>
+
+            <form th:action="@{/user/groups/add-contact}" method="post">
+
+                <input type="hidden" name="groupId" th:value="${group.id}" />
+
+                <!-- CONTACT LIST -->
+                <div class="grid sm:grid-cols-2 gap-3 max-h-64 overflow-y-auto">
+
+                    <label th:each="c : ${contacts}" class="flex items-center gap-3 p-3 rounded-lg 
+                              bg-gray-50 dark:bg-gray-900 
+                              border border-gray-200 dark:border-gray-700
+                              hover:bg-blue-50 dark:hover:bg-gray-700 cursor-pointer">
+
+                        <input type="checkbox" name="contactIds" th:value="${c.id}" class="w-4 h-4 accent-blue-600">
+
+                        <span class="text-gray-900 dark:text-white" th:text="${c.name}">
+                        </span>
+
+                    </label>
+
+                </div>
+
+                <!-- BUTTON -->
+                <button type="submit" class="mt-4 w-full bg-blue-600 text-white py-2 rounded-lg 
+                           hover:bg-blue-700 transition duration-300">
+                    Add to Group
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- GROUP CONTACTS -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                border border-gray-200 dark:border-gray-700">
+
+            <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                📞 Group Contacts
+            </h2>
+
+            <!-- EMPTY STATE -->
+            <div th:if="${#lists.isEmpty(group.contacts)}" class="text-gray-500 dark:text-gray-400">
+                No contacts added yet 😔
+            </div>
+
+            <!-- CONTACT LIST -->
+            <div class="grid sm:grid-cols-2 gap-4">
+
+                <div th:each="c : ${group.contacts}" class="p-4 rounded-lg bg-gray-50 dark:bg-gray-900 
+                        border border-gray-200 dark:border-gray-700 
+                        flex justify-between items-center">
+
+                    <div>
+                        <p class="text-gray-900 dark:text-white font-medium" th:text="${c.name}"></p>
+                    </div>
+
+                    <!-- REMOVE BUTTON -->
+                    <a th:href="@{'/user/groups/remove-contact?groupId=' + ${group.id} + '&contactId=' + ${c.id}}"
+                        class="text-sm text-red-500 hover:text-red-600">
+                        Remove
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPT -->
+    <script th:fragment="script">
+        console.log("Group Details Page Loaded ");
+    </script>
+
+</body>
+
+</html>

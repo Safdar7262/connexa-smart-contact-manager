@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title th:replace="${title}">Connexa</title>
+
+    <link rel="stylesheet" th:href="@{/css/output.css}" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+</head>
+
+<body class="min-h-screen w-full
+bg-gradient-to-br from-gray-100 via-slate-100 to-gray-200
+dark:from-gray-900 dark:via-gray-800 dark:to-black
+text-gray-800 dark:text-gray-200
+relative overflow-x-hidden">
+
+    <!-- Background shapes -->
+
+    <div class="absolute top-0 left-0 w-72 h-72
+bg-blue-300 opacity-20 blur-3xl rounded-full"></div>
+
+    <div class="absolute bottom-0 right-0 w-72 h-72
+bg-purple-300 opacity-20 blur-3xl rounded-full"></div>
+
+
+    <!-- NAVBAR -->
+
+    <div th:if="${loggedInUser}">
+        <div th:replace="~{user/user_navbar :: user-navbar}"></div>
+    </div> 
+ 
+    
+    
+
+    <div th:unless="${loggedInUser}">
+        <div th:replace="~{navbar :: navbar}"></div>
+    </div>
+
+    
+
+ 
+
+
+
+    <!-- SIDEBAR -->
+
+    <div th:if="${loggedInUser}">
+        <div th:replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+
+
+    <!-- MAIN CONTENT -->
+
+   <main class="relative min-h-screen p-6 pt-24 sm:ml-64">
+
+        <section th:replace="${content}"></section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="border-t border-gray-200
+dark:border-gray-700
+bg-white/70 dark:bg-gray-900/70
+backdrop-blur
+text-center p-6 text-sm
+text-gray-500 dark:text-gray-400">
+
+        <p>
+            © 2026 Connexa — Smart Contact Manager built with Spring Boot
+        </p>
+
+    </footer>
+
+
+    <!-- ===== JS ===== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <script th:src="@{/js/script.js}"></script>
+
+    <!-- optional script block -->
+    <th:block th:if="${script}" th:replace="${script}"></th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <div id="content">
+
+        <div class="relative min-h-screen flex items-center justify-center p-6
+ bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100 dark:from-gray-900 dark:via-gray-800 dark:to-black
+ overflow-hidden">
+
+            <div class="relative w-full max-w-md">
+
+                <div class="bg-white/90 dark:bg-gray-900/80 backdrop-blur-md
+border border-gray-200 dark:border-gray-700
+rounded-2xl shadow-2xl p-10">
+
+                    <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-2">
+                        Welcome Back
+                    </h2>
+
+                    <p class="text-center text-gray-500 dark:text-gray-400 mb-8">
+                        Login to manage your contacts
+                    </p>
+
+                    <!-- ERROR MESSAGE -->
+                    <div th:if="${param.error}" class="mb-4 p-3 rounded-lg bg-red-100 text-red-700 text-center text-sm">
+                        Invalid email or password.
+                    </div>
+
+                    <!-- LOGOUT MESSAGE -->
+                    <div th:if="${param.logout}"
+                        class="mb-4 p-3 rounded-lg bg-green-100 text-green-700 text-center text-sm">
+                        You have been logged out successfully.
+                    </div>
+
+                    <!-- LOGIN FORM -->
+                    <form th:action="@{/authentication}" method="post" class="space-y-5">
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                                Email
+                            </label>
+
+                            <input type="email" name="email" class="w-full px-4 py-2 rounded-lg border border-gray-300
+bg-white text-gray-800 shadow-sm
+focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+dark:bg-gray-800 dark:text-white dark:border-gray-600" placeholder="Enter your email" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                                Password
+                            </label>
+
+                            <input type="password" name="password" class="w-full px-4 py-2 rounded-lg border border-gray-300
+bg-white text-gray-800 shadow-sm
+focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
+dark:bg-gray-800 dark:text-white dark:border-gray-600" placeholder="Enter your password" required>
+                        </div>
+
+                        <div class="flex justify-center gap-4 pt-4">
+
+                            <button type="submit" class="px-6 py-2 rounded-lg
+bg-gradient-to-r from-indigo-600 to-purple-600
+hover:from-indigo-700 hover:to-purple-700
+text-white font-medium shadow-lg transition">
+                                Login
+                            </button>
+
+                            <button type="reset" class="px-6 py-2 rounded-lg
+bg-gradient-to-r from-orange-500 to-red-500
+hover:from-orange-600 hover:to-red-600
+text-white font-medium shadow-lg transition">
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <!-- Divider -->
+                    <div class="flex items-center my-6">
+                        <div class="flex-grow border-t border-gray-300"></div>
+                        <span class="mx-3 text-sm text-gray-500">OR</span>
+                        <div class="flex-grow border-t border-gray-300"></div>
+                    </div>
+
+                    <!-- GOOGLE LOGIN -->
+                    <a href="/oauth2/authorization/google" class="flex items-center justify-center gap-3 w-full py-2 px-4
+border border-gray-300 rounded-lg shadow-sm
+bg-white hover:bg-gray-100 text-gray-700 font-medium transition mb-3">
+
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" class="w-5 h-5">
+
+                        Continue with Google
+
+                    </a>
+
+                    <!-- GITHUB LOGIN -->
+                    <a href="/oauth2/authorization/github" class="flex items-center justify-center gap-3 w-full py-2 px-4
+border border-gray-300 rounded-lg shadow-sm
+bg-gray-900 hover:bg-black text-white font-medium transition">
+
+                        <img src="https://www.svgrepo.com/show/512317/github-142.svg" class="w-5 h-5 invert">
+
+                        Continue with GitHub
+
+                    </a>
+
+                    <!-- REGISTER -->
+                    <div class="text-center mt-6 text-sm text-gray-600 dark:text-gray-400">
+
+                        Don't have an account?
+
+                        <a th:href="@{/register}" class="text-indigo-600 hover:text-indigo-800 font-medium">
+                            Create Account
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        console.log("Login Page Loaded");
+    </script>
+
+</body>
+
+</html>

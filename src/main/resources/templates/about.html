@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" 
+      th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>About|Connexa</title>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 transition duration-300">
+
+<div id="content" class="px-4 sm:px-6 lg:px-8 py-10 max-w-7xl mx-auto">
+
+    <!-- HERO -->
+    <section class="text-center mb-16">
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold 
+                   text-gray-900 dark:text-white mb-4">
+            About Smart Contact Manager
+        </h1>
+
+        <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+            Smart Contact Manager (SCM) is a modern web application designed to help you 
+            efficiently store, manage, and organize your contacts in a secure and user-friendly way.
+        </p>
+
+    </section>
+
+    <!-- ABOUT CONTENT -->
+    <section class="grid md:grid-cols-2 gap-10 items-center mb-16">
+
+        <!-- LEFT TEXT -->
+        <div>
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                Why SCM?
+            </h2>
+
+            <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                Managing contacts can be messy when scattered across devices. SCM provides 
+                a centralized platform where you can easily access, update, and organize 
+                all your contacts.
+            </p>
+
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+                Built with modern technologies like Spring Boot and Thymeleaf, this application 
+                ensures performance, scalability, and security.
+            </p>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg 
+                    border border-gray-200 dark:border-gray-700">
+
+            <h3 class="text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
+                Key Highlights
+            </h3>
+
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+                <li>✔ Secure authentication system</li>
+                <li>✔ Easy contact management</li>
+                <li>✔ Fast search & filtering</li>
+                <li>✔ Responsive design</li>
+                <li>✔ Clean and modern UI</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+    <!-- TEAM / CREATOR -->
+    <section class="text-center mb-16">
+
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            Built By
+        </h2>
+
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md 
+                    border border-gray-200 dark:border-gray-700 inline-block">
+
+            <h3 class="text-lg font-semibold text-purple-600 dark:text-purple-400">
+                Safdar Azam
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-400 text-sm mt-2">
+                Java Full Stack Developer | Passionate about building scalable web applications.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="text-center mb-16">
+
+        <div class="bg-gradient-to-r from-blue-600 to-purple-600 
+                    text-white py-10 px-6 rounded-xl shadow-lg">
+
+            <h2 class="text-xl sm:text-2xl font-semibold mb-4">
+                Want to manage your contacts smarter?
+            </h2>
+
+            <a th:href="@{/register}"
+               class="bg-white text-blue-600 px-6 py-2 rounded-lg font-medium 
+                      hover:bg-gray-100 transition duration-300">
+                Get Started
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center text-gray-500 dark:text-gray-400 text-sm 
+                   border-t border-gray-200 dark:border-gray-700 pt-6">
+
+        <p>© 2026 Connexa | Built by Safdar Azam</p>
+
+    </footer>
+
+</div>
+
+<script>
+    console.log("About Page Loaded ");
+</script>
+
+</body>
+</html>
