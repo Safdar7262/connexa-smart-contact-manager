@@ -1,4 +1,4 @@
-#  Smart Contact Manager (SCM 2.0)
+#  Connexa(Smart Contact Manager) 
 
 A full-stack Contact Management System built using **Spring Boot**, designed to manage personal and professional contacts efficiently.  
 This project demonstrates real-world implementation of authentication, cloud storage, and modern backend architecture.
@@ -7,7 +7,7 @@ This project demonstrates real-world implementation of authentication, cloud sto
 
 ##  Project Overview
 
-Smart Contact Manager (SCM 2.0) is a secure and scalable web application where users can:
+Smart Contact Manager (Connexa) is a secure and scalable web application where users can:
 
 - Manage contacts (Add, Update, Delete, View)
 - Upload profile images using Cloudinary
@@ -74,7 +74,7 @@ This project follows **layered architecture**:
 - HTML, CSS, JavaScript
 
 ### Database
-- MySQL
+- PostgreSQL
 
 ###  Cloud
 - Cloudinary (Image Storage)
@@ -115,13 +115,13 @@ Used for storing contact profile images.
 
 ### 1️⃣ Clone Repository
 
-git clone https://github.com/Shahbaz786929/smart-contact-manager.git
+https://github.com/Safdar7262/connexa-smart-contact-manager/edit/main/README.md
 
 ### 2️⃣ Open in IDE
 - VS Code / IntelliJ IDEA
 
-### 3️⃣ Configure MySQL Database
-- Create database: `scm20`
+### 3️⃣ Configure PostgreSQL Database
+- Create database: `connexa`
 - Update credentials in `application.properties`
 
 ### 4️⃣ Run Application
@@ -134,5 +134,5 @@ http://localhost:8081
 
 ##  Author
 
-**Mohammad Shahbaz**
-**shahbaz786929@gmail.com**
+**Safdar Azam**
+**safdarazam373@gmail.com**
