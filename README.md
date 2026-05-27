@@ -115,7 +115,7 @@ Used for storing contact profile images.
 
 ### 1️⃣ Clone Repository
 
-https://github.com/Safdar7262/connexa-smart-contact-manager/edit/main/README.md
+-https://github.com/Safdar7262/connexa-smart-contact-manager.git
 
 ### 2️⃣ Open in IDE
 - VS Code / IntelliJ IDEA
