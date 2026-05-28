@@ -131,12 +131,6 @@ ScmApplication.java
 ### 5️⃣ Access Application
 http://localhost:8081
 
-## Screenshots
-
-![Home](assets/screenshots/home.png)
-
-![Dashboard](assets/screenshots/dashboard.png)
-
 ##  Author
 
 **Safdar Azam**
